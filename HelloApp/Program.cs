@@ -25,7 +25,6 @@ namespace HelloApp
             Console.WriteLine("/*");
             Console.WriteLine("Многострочный коментарий");
             Console.WriteLine("*/");
-            // Конец блока метода
             Console.WriteLine();
 
             // Регистрозависимые переменные
@@ -70,7 +69,10 @@ namespace HelloApp
             meltingTemperature = 0x0D48; // задаем значение переменной в 16-ой системе.
             Console.Write($"\nТемпература плавления вольфрама около {meltingTemperature}, это {Convert.ToString(meltingTemperature, 2).PadLeft(16, '0')} в двоичной системе.");
 
+            // Ждем ввода пользователя
             Console.ReadKey();
+
+            // Конец блока метода
         }
 
         // Конец блока класса
