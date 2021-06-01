@@ -26,10 +26,18 @@ namespace HelloApp
             Console.WriteLine($"Переменная name = {name}");
             Console.WriteLine($"Переменная Name = {Name}");
             Console.WriteLine($"Переменная NAME = {NAME}");
-            Console.ReadKey();
+            Console.WriteLine();
 
+            // Однострочный коментарий
+            Console.WriteLine("// Однострочный коментарий");
+            /*
+            Многострочный коментарий
+            */
+            Console.WriteLine("/*");
+            Console.WriteLine("Многострочный коментарий");
+            Console.WriteLine("*/");
             // Конец блока метода
-
+            Console.ReadKey();
         }
 
         // Конец блока класса
