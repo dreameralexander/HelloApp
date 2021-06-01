@@ -13,9 +13,13 @@ namespace HelloApp
         // Начало блока класса
 
         // Объявление нового метода
-        static void Main(string[] arg) 
+        static void Main(string[] arg)
         {
             // Начало блока метода
+
+            Console.WriteLine("Hello World!");
+
+            Console.ReadKey();
 
             // Конец блока метода
 
