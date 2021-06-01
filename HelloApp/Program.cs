@@ -48,7 +48,29 @@ namespace HelloApp
             //Прошел год
             personAge++;
             Console.WriteLine($"Возраст на данный момент - {personAge}");
-            
+            Console.WriteLine();
+
+            //Литералы, константы 
+            bool isCreate = false;
+            Console.Write($"Логический литерал isCreate может имет значение - {isCreate.ToString()} в двоичной системе ({Convert.ToString(Convert.ToByte(isCreate), 2).PadLeft(8, '0') })");
+            isCreate = !isCreate;
+            Console.Write($" или {isCreate.ToString()} в двоичной системе ({Convert.ToString(Convert.ToByte(isCreate), 2).PadLeft(8, '0') }).");
+            Console.WriteLine("\nНасчет представления в двоичной системе, все несколько иначе, 00000000 это false, а вот любой другой вариант это true.");
+
+            //Целочисленные литералы
+            byte temperature = 20;
+            Console.Write($"Температура летом около {temperature}, это {Convert.ToString(temperature, 2).PadLeft(8, '0')} в двоичной системе.");
+
+            short meltingTemperature = 1500;
+            Console.Write($"\nТемпература плавления стали около {meltingTemperature}, это {Convert.ToString(meltingTemperature, 2).PadLeft(16, '0')} в двоичной системе.");
+
+            temperature = 0b00001111; // задаем значение переменной в 2-ой системе.
+            Console.Write($"\nТемпература сейчас за окном {temperature}, это {Convert.ToString(temperature, 2).PadLeft(8, '0')} в двоичной системе.");
+
+            meltingTemperature = 0x0D48; // задаем значение переменной в 16-ой системе.
+            Console.Write($"\nТемпература плавления вольфрама около {meltingTemperature}, это {Convert.ToString(meltingTemperature, 2).PadLeft(16, '0')} в двоичной системе.");
+
+            Console.ReadKey();
         }
 
         // Конец блока класса
