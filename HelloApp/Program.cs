@@ -17,8 +17,15 @@ namespace HelloApp
         {
             // Начало блока метода
 
-            Console.WriteLine("Hello World!");
+            // Регистрозависимые переменные
+            // Объявлены 3 раные переменные
+            string name = "Олег";
+            string Name = "Саша";
+            string NAME = "Маша";
 
+            Console.WriteLine($"Переменная name = {name}");
+            Console.WriteLine($"Переменная Name = {Name}");
+            Console.WriteLine($"Переменная NAME = {NAME}");
             Console.ReadKey();
 
             // Конец блока метода
