@@ -132,6 +132,25 @@ namespace HelloApp
             string personFio = null;
             Console.Write($"{personFio}Значение переменой person равно \"{personFio}\"");
 
+            //Литерал object
+            object commonObject = gdpRussia2020InTrillionRub;
+            Console.Write($"{newRowCharacters}Значение переменной commonObject \"{commonObject}\"");
+            //Любопытно, а что будет если мы изменим переменную которую присвоили commonObject
+            gdpRussia2020InTrillionRub = 107;
+            Console.Write($"{newRowCharacters}Значение переменной commonObject \"{commonObject}\"");
+
+            //Не явная типизация
+            var a = "Привет";
+            Console.Write($"{newRowCharacters}Тип переменной a = \"{a.GetType()}\", а ее значение {a}");
+
+            //Это работать не будет, так как a = null, что вызовет ошибку.
+            //a = null;
+            //Console.Write($"{newRowCharacters}Тип переменной a = \"{a.GetType()}\", а ее значение {a}");
+
+            //Это работать не будет
+            //var b;
+            //var b = null;     
+
             // Ждем ввода пользователя
             Console.ReadKey();
 
