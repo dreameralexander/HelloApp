@@ -100,7 +100,37 @@ namespace HelloApp
             curentDollarToEuroExchangeRate = 12212E-4M;
             Console.Write($"\nТекущий курс USD к EURO - {curentDollarToEuroExchangeRate}");
 
+            //Символьные литералы
+            char letter = 'A';
+            Console.Write($"\nПервая буква анг. алфавита {letter}, ");
+            letter = 'Я';
+            Console.Write($"а последняя рус. алфавита {letter}. ");
+            letter = '1';
+            Console.Write(letter);
+            letter = '.';
+            Console.Write(letter);
+            letter = '\x41';
+            Console.Write($"{letter}, 2.");
+            letter = '\x42';
+            Console.Write(letter);
+            Console.Write($"\nСимвол \\u0420 из таблици Unicode равен - ");
+            letter = '\u0420';
+            Console.Write(letter);
 
+            //Управляющие символьные литералы
+            char newRowCharacters = '\n';
+            char tabCharacters = '\t';
+            Console.Write($"{newRowCharacters}{newRowCharacters}{tabCharacters}{tabCharacters}Мой первый друг, мой друг бесценный!");
+
+            //Строковые литералы
+            string message = "\n\nСимвол \\u0420 из таблици Unicode равен - \u0420. " +
+                "\nСимвол \\x50 из таблицы ASCII равен - \x50." +
+                "\nКомпания \"IBM\"";
+            Console.Write(message);
+
+            //Литерал null
+            string personFio = null;
+            Console.Write($"{personFio}Значение переменой person равно \"{personFio}\"");
 
             // Ждем ввода пользователя
             Console.ReadKey();
