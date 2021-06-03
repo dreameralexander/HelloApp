@@ -140,8 +140,8 @@ namespace HelloApp
             Console.Write($"{newRowCharacters}Значение переменной commonObject \"{commonObject}\"");
 
             //Не явная типизация
-            var a = "Привет";
-            Console.Write($"{newRowCharacters}Тип переменной a = \"{a.GetType()}\", а ее значение {a}");
+            var text = "Привет";
+            Console.Write($"{newRowCharacters}Тип переменной a = \"{text.GetType()}\", а ее значение {text}");
 
             //Это работать не будет, так как a = null, что вызовет ошибку.
             //a = null;
@@ -150,6 +150,46 @@ namespace HelloApp
             //Это работать не будет
             //var b;
             //var b = null;     
+
+            //Арифметические операции
+            //Бинарные операции
+            int a = 5;
+            int b = 10;
+            int c = a + b;
+
+            Console.Write($"{newRowCharacters}а({a}) + b({b}) = c({c}).");
+            c = a - b;
+            Console.Write($"{newRowCharacters}а({a}) - b({b}) = c({c}).");
+            c = a * b;
+            Console.Write($"{newRowCharacters}а({a}) * b({b}) = c({c}).");
+            c = b / a;
+            Console.Write($"{newRowCharacters}b({b}) / c({a}) = c({c}).");
+            c = a / b;
+            Console.Write($"{newRowCharacters}а({b}) / b({a}) = c({c}). Так как int может хранить только целые значения, значения после запятой мы потеряли.");
+
+            //Инициализируем несколько переменных одного типа
+            float x = 5, y = 10, z;
+            z = x / y;
+            Console.Write($"{newRowCharacters}x({x}) / y({y}) = z({z}).");
+
+            //Остаток от деления
+            z = x % y;
+            Console.Write($"{newRowCharacters}x({x}) % y({y}) = z({z}). Остаток от деления.");
+
+            //Унарные опереации
+            c = ++a + ++b; //префиксный инкремент
+            Console.Write($"{newRowCharacters}++а({a}) + ++b({b}) = c({c}). Сначала происходит прибавление, после чего происходит операция суммирования.");
+
+            c = a++ + b++; //постфиксный инкремент
+            Console.Write($"{newRowCharacters}а++({a}) + b++({b}) = c({c}). Сначала происходит операция суммирования, после чего происходит прибавление.{newRowCharacters}При последующем вызове переменных a, b мы видим измененое значение.");
+
+            a = 5;
+            b = 10;
+            c = --b - a--; //префиксный декремент
+            Console.Write($"{newRowCharacters}--b({b}) - a--({a}) = c({c}). А так еще интереснее, не забываем, что постфиксный выполняется после возврата значения в инструкцию. {newRowCharacters}При последующем вызове переменных a, b мы видим измененое значение.");
+
+            c = b-- - --a; //постфиксный декремент
+            Console.Write($"{newRowCharacters}b--({b}) - --a({a}) = c({c}). Не забываем, что постфиксный выполняется после возврата значения в инструкцию. {newRowCharacters}При последующем вызове переменных a, b мы видим измененое значение.");
 
             // Ждем ввода пользователя
             Console.ReadKey();
