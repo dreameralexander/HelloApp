@@ -242,6 +242,17 @@ namespace HelloApp
                $">>2{newRowCharacters}{tabCharacters}" +
                $"{Convert.ToString(bC, 2).PadLeft(8, '0')}");
 
+            //Операции присваивания
+            int q = 10, w, e =17, r =57;
+            q = w = e = r = 135;
+            Console.Write($"{newRowCharacters}Операция присваивания.{newRowCharacters}q = w = e = r = 135({q}){newRowCharacters}Операции присваивания имеет низкий приоритет, поэтому тут оно выполняется последней.");
+
+            q = 10;
+            w = e = 17;
+            r = 57;
+            int t = q += w *= e -= r -= 5;
+            Console.Write($"{newRowCharacters}Операция присваивания.{newRowCharacters}t({t}) = q({q}) += w({w}) *= e({e}) -= r({r}) -= 5{newRowCharacters}Операции присваивания являются правоассоциативные, то есть выполняются с право на лево.");
+
             // Ждем ввода пользователя
             Console.ReadKey();
 
