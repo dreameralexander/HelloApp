@@ -196,7 +196,39 @@ namespace HelloApp
             Console.Write($"{newRowCharacters} 10 / 5 * 2 = z({z})). Порядок выполнения:{newRowCharacters}1. Инкремент, декремент.{newRowCharacters}2. Умножение, деление, получение остатка{newRowCharacters}3. Сложение и вычитание{newRowCharacters}" +
                 $"Если операции имеют один и тот же приоритет, они выполняются в зависимости от ассоциативности. Все арифметические операции являются левоассоциативными и выполняются слева на право");
             c = ++a + b * a + 10 / a - b;
-            Console.Write($"{newRowCharacters} ++a({a}) + b({b}) * a({a}) + 10 / a({a}) - b({b}) = с({c})). Порядок выполнения:{newRowCharacters}1. Инкремент, декремент.{newRowCharacters}2. Умножение, деление, получение остатка{newRowCharacters}3. Сложение и вычитание");          
+            Console.Write($"{newRowCharacters} ++a({a}) + b({b}) * a({a}) + 10 / a({a}) - b({b}) = с({c})). Порядок выполнения:{newRowCharacters}1. Инкремент, декремент.{newRowCharacters}2. Умножение, деление, получение остатка{newRowCharacters}3. Сложение и вычитание");
+
+            //Поразрядные операции
+            byte bA = 5, bB = 14, bC;
+
+            //Логическое умножение, хотя по логике больше похоже на И
+            bC = (byte)(bA & bB);
+            Console.Write($"{newRowCharacters}Логическое умножение, хотя по логике больше похоже на И.{newRowCharacters}A({bA}) & B({bB}) равно C({bC}), а теперь в двоичной системе {newRowCharacters}{tabCharacters}" +
+                $"{Convert.ToString(bA, 2).PadLeft(8, '0')}{newRowCharacters}{tabCharacters}&{newRowCharacters}{tabCharacters}" +
+                $"{Convert.ToString(bB, 2).PadLeft(8, '0')}{newRowCharacters}{tabCharacters}" +
+                $"{Convert.ToString(bC, 2).PadLeft(8, '0')}");
+
+            //Логическое сложение, хотя по логике больше похоже на ИЛИ
+            bC = (byte)(bA | bB);
+            Console.Write($"{newRowCharacters}Логическое сложение, хотя по логике больше похоже на ИЛИ.{newRowCharacters}A({bA}) | B({bB}) равно C({bC}), а теперь в двоичной системе {newRowCharacters}{tabCharacters}" +
+                $"{Convert.ToString(bA, 2).PadLeft(8, '0')}{newRowCharacters}{tabCharacters}&{newRowCharacters}{tabCharacters}" +
+                $"{Convert.ToString(bB, 2).PadLeft(8, '0')}{newRowCharacters}{tabCharacters}" +
+                $"{Convert.ToString(bC, 2).PadLeft(8, '0')}");
+
+            //Логическое исключаеще ИЛИ (XOR)
+            bC = (byte)(bA ^ bB);
+            Console.Write($"{newRowCharacters}Логическое исключаеще ИЛИ (XOR).{newRowCharacters}A({bA}) ^ B({bB}) равно C({bC}), а теперь в двоичной системе {newRowCharacters}{tabCharacters}" +
+                $"{Convert.ToString(bA, 2).PadLeft(8, '0')}{newRowCharacters}{tabCharacters}&{newRowCharacters}{tabCharacters}" +
+                $"{Convert.ToString(bB, 2).PadLeft(8, '0')}{newRowCharacters}{tabCharacters}" +
+                $"{Convert.ToString(bC, 2).PadLeft(8, '0')}");
+
+            //Логическое отрицание или инверсия
+            bC = (byte)~bB;
+            Console.Write($"{newRowCharacters}Логическое отрицание или инверсия.{newRowCharacters}~B({bB}) равно C({bC}), а теперь в двоичной системе {newRowCharacters}{tabCharacters}" +
+                //$"{Convert.ToString(bA, 2).PadLeft(8, '0')}{newRowCharacters}{tabCharacters}&{newRowCharacters}{tabCharacters}" +
+                $"{Convert.ToString(bB, 2).PadLeft(8, '0')}{newRowCharacters}{tabCharacters}" +
+                $"~{newRowCharacters}{tabCharacters}" +
+                $"{Convert.ToString(bC, 2).PadLeft(8, '0')}");
 
             // Ждем ввода пользователя
             Console.ReadKey();
