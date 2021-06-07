@@ -229,6 +229,19 @@ namespace HelloApp
                 $"~{newRowCharacters}{tabCharacters}" +
                 $"{Convert.ToString(bC, 2).PadLeft(8, '0')}");
 
+            //Операции сдвига
+            bC = (byte)(bB<<2);
+            Console.Write($"{newRowCharacters}Операция сдвига.{newRowCharacters}B({bB}) << 2 равно C({bC}), а теперь в двоичной системе {newRowCharacters}{tabCharacters}" +
+               $"{Convert.ToString(bB, 2).PadLeft(8, '0')}{newRowCharacters}{tabCharacters}" +
+               $"<<2{newRowCharacters}{tabCharacters}" +
+               $"{Convert.ToString(bC, 2).PadLeft(8, '0')}");
+
+            bC = (byte)(bB >> 2);
+            Console.Write($"{newRowCharacters}Операция сдвига.{newRowCharacters}B({bB}) >> 2 равно C({bC}), а теперь в двоичной системе {newRowCharacters}{tabCharacters}" +
+               $"{Convert.ToString(bB, 2).PadLeft(8, '0')}{newRowCharacters}{tabCharacters}" +
+               $">>2{newRowCharacters}{tabCharacters}" +
+               $"{Convert.ToString(bC, 2).PadLeft(8, '0')}");
+
             // Ждем ввода пользователя
             Console.ReadKey();
 
