@@ -253,6 +253,16 @@ namespace HelloApp
             int t = q += w *= e -= r -= 5;
             Console.Write($"{newRowCharacters}Операция присваивания.{newRowCharacters}t({t}) = q({q}) += w({w}) *= e({e}) -= r({r}) -= 5{newRowCharacters}Операции присваивания являются правоассоциативные, то есть выполняются с право на лево.");
 
+            //Представление отрицательных чисел
+            //Старший разряд является знаковым, если он равен 1, то значение отрицательное
+            sbyte v = 100;
+            Console.Write($"{newRowCharacters}v({v}), это {Convert.ToString(v, 2).PadLeft(8, '0')} в двоичной системе.");
+            v = (sbyte)(~v + 1);
+            Console.Write($"{newRowCharacters}v({v}), после ~v + 1, это {Convert.ToString(v, 2).PadLeft(8, '0')} в двоичной системе.");
+            v = (sbyte)(~v + 1);
+            Console.Write($"{newRowCharacters}v({v}), после ~v + 1, это {Convert.ToString(v, 2).PadLeft(8, '0')} в двоичной системе.");
+
+
             // Ждем ввода пользователя
             Console.ReadKey();
 
