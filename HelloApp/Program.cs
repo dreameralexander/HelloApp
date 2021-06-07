@@ -225,7 +225,6 @@ namespace HelloApp
             //Логическое отрицание или инверсия
             bC = (byte)~bB;
             Console.Write($"{newRowCharacters}Логическое отрицание или инверсия.{newRowCharacters}~B({bB}) равно C({bC}), а теперь в двоичной системе {newRowCharacters}{tabCharacters}" +
-                //$"{Convert.ToString(bA, 2).PadLeft(8, '0')}{newRowCharacters}{tabCharacters}&{newRowCharacters}{tabCharacters}" +
                 $"{Convert.ToString(bB, 2).PadLeft(8, '0')}{newRowCharacters}{tabCharacters}" +
                 $"~{newRowCharacters}{tabCharacters}" +
                 $"{Convert.ToString(bC, 2).PadLeft(8, '0')}");
