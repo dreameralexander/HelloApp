@@ -283,7 +283,7 @@ namespace HelloApp
 
             //Условные выражения
             //Операции сравнения
-            byte a = 10, b = 4;
+            /*byte a = 10, b = 4;
             bool c = a == b;
             Console.Write($"Операции сравнения == (равно)\nbyte a = 10, b = 4;\nbool c = a({a}) == b({b}); //c = {c}");
             c = a != b;
@@ -313,6 +313,101 @@ namespace HelloApp
             Console.Write($"\nЛогические операции ! (логическое исключаещее или)\nz({z}) = x({x}) ^ y({y});");
             z = !x ^ y;
             Console.Write($"\nЛогические операции ! (логическое исключаещее или)\nz({z}) = !x({x}) ^ y({y});");
+            */
+
+            //Условные конструкции
+            //if\else
+            int num1 = 8, num2 = 6;
+            if (num1 > num2) 
+            {
+                Console.WriteLine($"1. Число num1({num1}) больше числа num2({num2})!");
+            }
+
+            num2 += num1;
+            if (num1 > num2)
+            {
+                Console.WriteLine($"2. Число num1({num1}) больше числа num2({num2})!");
+            }
+            else
+            {
+                Console.WriteLine($"2. Число num1({num1}) меньше числа num2({num2})!");
+            }
+
+            num1 = num2;
+            if (num1 > num2)
+            {
+                Console.WriteLine($"3. Число num1({num1}) больше числа num2({num2})!");
+            }
+            else if (num1 < num2)
+            {
+                Console.WriteLine($"3. Число num1({num1}) меньше числа num2({num2})!");
+            }
+            else 
+            {
+                Console.WriteLine($"3. Число num1({num1}) равно числу num2({num2})!");
+            }
+
+            //Корткий стиль написания, желательно не использовать.
+            if (num1 > num2)
+                Console.WriteLine($"4. Число num1({num1}) больше числа num2({num2})!");
+            else if (num1 < num2)
+                Console.WriteLine($"4. Число num1({num1}) меньше числа num2({num2})!");
+            else
+                Console.WriteLine($"4. Число num1({num1}) равно числу num2({num2})!");
+
+            //switch
+            Console.WriteLine($"Ответьте на вопрос Y или N?");
+            string text = Console.ReadLine();
+            switch (text)
+            {
+                case "Y":
+                    Console.WriteLine($"Вы выбрали Y");
+                    break;
+                case "N":
+                    Console.WriteLine($"Вы выбрали N");
+                    break;
+                default:    // Будет выполнен, если text не совпал с вариантами сравнения в case.
+                    Console.WriteLine($"Y или N!");
+                    break;
+            }
+
+            Console.WriteLine($"Ответьте на вопрос, какая последняя буква алфавита?");
+            text = Console.ReadLine();
+            switch (text)
+            {
+                case "Я":   // На русском 
+                case "Z":   // На английском
+                    Console.WriteLine($"Вы ответили правильно!");
+                    break;
+                default:
+                    // Будет выполнен, если text не совпал с вариантами сравнения в case.
+                    Console.WriteLine($"Вы ответили не правильно!");
+                    break;
+            }
+
+            Console.WriteLine($"Ответьте на вопрос, какая первая буква алфавита?");
+            text = Console.ReadLine();
+            switch (text)
+            {
+                case "A":   // На английском
+                    Console.WriteLine("Это A из английского алфавита.");
+                    goto case "А";
+                case "А":   // На русском 
+                    Console.WriteLine($"Вы ответили правильно!");
+                    break;           
+                default:
+                    // Будет выполнен, если text не совпал с вариантами сравнения в case.
+                    Console.WriteLine($"Вы ответили не правильно!");
+                    break;
+            }
+
+            //Тенарная операция
+            int x = 3, y = 2;
+            Console.WriteLine("Нажмите + или -");
+            string selection = Console.ReadLine();
+
+            int z = selection == "+" ? (x + y) : (x - y);
+            Console.WriteLine(z);
 
             // Ждем ввода пользователя
             Console.ReadKey();
